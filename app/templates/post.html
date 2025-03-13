@@ -25,7 +25,7 @@
                         <label for="commentText">Ваш комментарий</label>
                         <textarea class="form-control" id="commentText" name="commentText" rows="3"></textarea>
                     </div>
-                     <input type="hidden" name="parent_id" value=""> <!-- Важное дополнение! -->
+                     <input type="hidden" name="parent_id" value="">
                     <button type="submit" class="btn btn-primary mt-2">Отправить</button>
                 </form>
             </div>
@@ -42,9 +42,9 @@
                             <h5 class="mt-0">{{ comment.author }}</h5>
                             <p>{{ comment.text }}</p>
                             {% if comment.replies %}
-                                <div class="ms-5 mt-3"> <!-- Отступ для вложенных комментариев -->
+                                <div class="ms-5 mt-3">
                                     {% for reply in comment.replies %}
-                                        {{ render_comment(reply) }} <!-- Рекурсивный вызов макроса для ответов -->
+                                        {{ render_comment(reply) }}
                                     {% endfor %}
                                 </div>
                             {% endif %}
